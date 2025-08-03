@@ -11,7 +11,7 @@ class Signup {
   }
 
   async fillSingUpName(name) {
-    await this.name.fille(name);
+    await this.name.fill(name);
   }
 }
 
