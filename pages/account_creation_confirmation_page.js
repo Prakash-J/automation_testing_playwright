@@ -5,7 +5,7 @@
 class AccountCreationConfirmation {
   /**
    * @param {import('@playwright/test').page} page The Playwright page object
-   * @constructor
+   * @class
    */
   constructor(page) {
     this.confirmationTitle = page.getByRole('heading', { name: 'Account Created!' });

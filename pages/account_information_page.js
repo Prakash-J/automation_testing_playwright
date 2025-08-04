@@ -29,8 +29,7 @@ class AccountInformation {
 
   /**
    * Fills in the account creation form using the provided user data.
-   *
-   * @param {Object} userData - The user data object containing account details.
+   * @param {object} userData - The user data object containing account details.
    * @param {'Mr' | 'Ms'} userData.salutation - The user's salutation (e.g., 'Mr' or 'Ms').
    * @param {string} userData.password - The user's password.
    * @param {string} userData.day - The day of birth (value of the day dropdown).
