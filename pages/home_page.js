@@ -31,6 +31,18 @@ class HomePage {
   async selectNavigationLink(linkName) {
     await this.page.getByRole('link', { name: linkName }).click();
   }
+
+  /**
+   * Display the logged in used name on the home page
+   * @param {string} name Logged in user name displayed in the home page
+   * Gets the locator for the 'Logged in as' element.
+   * This is useful for assertions to verify a user is logged in.
+   * @param {string} name The username expected to be displayed.
+   * @returns {import('@playwright/test').Locator} The locator for the element.
+   */
+  async getLoggedInUserLocator(name) {
+    return this.page.getByText(` Logged in as ${name}`);
+  }
 }
 
 export default HomePage;
