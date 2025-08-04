@@ -1,5 +1,3 @@
-import { expect } from '@playwright/test';
-
 /**
  * Represents the initial user singup page act
  */
@@ -8,20 +6,13 @@ class Signup {
    * @param {import('@playwright/test').page} page
    */
   constructor(page) {
-    this.signUpPageConfirmation = page.getByRole('heading', { name: 'New User Signup!' });
+    this.signUpPageTitle = page.getByRole('heading', { name: 'New User Signup!' });
     this.name = page.getByPlaceholder('Name');
     this.email = page
       .locator('form')
       .filter({ hasText: 'Signup' })
       .getByPlaceholder('Email Address');
     this.singupButton = page.getByRole('button', { name: 'Signup' });
-  }
-
-  /**
-   * Verify "New User Signup!" is visible on the page
-   */
-  async verifySignupPageVisible() {
-    await expect(this.signUpPageConfirmation).toBeVisible();
   }
 
   /**
