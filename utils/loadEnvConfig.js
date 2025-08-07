@@ -1,9 +1,3 @@
-import dotenv from 'dotenv';
-import path from 'path';
-
-const env = process.env.TEST_ENV || 'dev';
-dotenv.config({ path: path.resolve(process.cwd(), `.env.${env}`) });
-
 /**
  * Dynamically loads the configuration and test data based on the current environment.
  *
@@ -17,8 +11,8 @@ dotenv.config({ path: path.resolve(process.cwd(), `.env.${env}`) });
  * - `testData`: Environment-specific test data
  */
 async function getEnvConfig() {
-  const config = await import(`../config/${env}.js`);
-  const testData = await import(`../data/${env}Data.js`);
+  const config = await import(`../config/${process.env.env}.js`);
+  const testData = await import(`../data/${process.env.env}Data.js`);
   return { config: config.default, testData: testData.default };
 }
 
