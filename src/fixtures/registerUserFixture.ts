@@ -2,8 +2,8 @@ import { test as base, expect } from '@playwright/test';
 
 import { HomePage } from '../pages/home_page';
 import { SignUpPage } from '../pages/start_signup_page';
-import { AccountCreationConfirmation } from '../pages/account_creation_confirmation_page';
-import { AccountInformation } from '../pages/account_information_page';
+import { AccountCreationConfirmationPage } from '../pages/account_creation_confirmation_page';
+import { AccountInformationPage } from '../pages/account_information_page';
 import { AccountDeleteConfirmationPage } from '../pages/account_delete_confirmation_page';
 import userData from '../data/devData';
 import { UserData } from '../interface/userData';
@@ -12,8 +12,8 @@ type registerUserFixture = {
     homePage: HomePage;
     signUpPage: SignUpPage;
     userData: UserData;
-    accountInformation: AccountInformation;
-    accountCreationConfirmationPage: AccountCreationConfirmation;
+    accountInformationPage: AccountInformationPage;
+    accountCreationConfirmationPage: AccountCreationConfirmationPage;
     accountDeletionConfirmationPage: AccountDeleteConfirmationPage
 }
 const test = base.extend<registerUserFixture>({
@@ -31,13 +31,13 @@ const test = base.extend<registerUserFixture>({
         await use(signUpPage);
     },
 
-    accountInformation: async ({ page }, use) => {
-        const accountInformation = new AccountInformation(page);
-        await use(accountInformation);
+    accountInformationPage: async ({ page }, use) => {
+        const accountInformationPage = new AccountInformationPage(page);
+        await use(accountInformationPage);
     },
 
     accountCreationConfirmationPage: async ({ page }, use) => {
-        const accountCreationConfirmationPage = new AccountCreationConfirmation(page);
+        const accountCreationConfirmationPage = new AccountCreationConfirmationPage(page);
         await use(accountCreationConfirmationPage);
     },
 
