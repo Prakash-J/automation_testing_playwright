@@ -20,32 +20,6 @@ The framework is built on a foundation of **separation of concerns**. Test logic
 
 The project's structure is intentionally designed to support scalability and different testing environments (e.g., Development, Staging, Production).
 
-```
-project-root/
-├── src/
-│   ├── fixtures/         # Playwright fixtures for setup/teardown
-│   ├── interface/        # TypeScript interfaces for data models
-│   ├── pages/            # Page Object Model (POM) classes
-│   └── tests/            # Test specifications (.spec.ts files)
-│
-├── config/               # Environment-specific configurations
-│   ├── dev.js
-│   └── staging.js
-│
-├── data/                 # Environment-specific test data
-│   ├── devData.js
-│   └── stagingData.js
-│
-├── utils/                # Helper/utility functions
-│
-├── .env.dev              # Environment variables for 'dev'
-├── .env.staging          # Environment variables for 'staging'
-├── .env.example          # Template for environment files
-├── .gitignore
-├── playwright.config.ts  # Main Playwright configuration
-└── README.md
-```
-
 ### 1. Page Object Model (POM) - `src/pages/`
 
 This framework strictly adheres to the Page Object Model (POM) design pattern.
