@@ -4,7 +4,7 @@ import { UserData } from '../interface/userData';
 const dob = faker.date.birthdate({ min: 18, max: 60, mode: 'age' });
 
 const userData: UserData = {
-    salutation: Math.random() > 0.5 ? 'Mr.' : 'Ms.',  // Randomly assign 'Mr.' or 'Ms.'
+    salutation: Math.random() > 0.5 ? 'Mr.' : 'Mrs.',  // Randomly assign 'Mr.' or 'Ms.'
     userFullName: faker.person.fullName().toString(),
     userFirstName: faker.person.firstName().toString(),
     userLastName: faker.person.lastName().toString(),
