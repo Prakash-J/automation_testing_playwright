@@ -1,7 +1,7 @@
 import type { Page, Locator } from '@playwright/test';
 import { UserData } from '../interface/userData';
 
-export class AccountInformation {
+export class AccountInformationPage {
     readonly page: Page;
     readonly pageTitle: Locator;
     readonly password: Locator;
@@ -24,7 +24,7 @@ export class AccountInformation {
 
     constructor(page: Page) {
         this.page = page;
-        this.pageTitle = page.getByRole('heading', { name: 'Enter Account Information' });
+        this.pageTitle = page.getByText('Enter Account Information')
         this.password = page.getByRole('textbox', { name: 'Password *' });
         this.day = page.locator('#days');
         this.month = page.locator('#months');
@@ -53,10 +53,10 @@ export class AccountInformation {
       await this.month.selectOption(userData.month);
       await this.year.selectOption(userData.year);
       if (userData.newsLetterSignUp) {
-        this.newsLetterSignUp.check();
+        await this.newsLetterSignUp.check();
       }
       if (userData.receiveSpecialOffer) {
-        this.receiveSpecialOffer.check();
+        await this.receiveSpecialOffer.check();
       }
       await this.userFirstName.fill(userData.userFirstName);
       await this.userLastName.fill(userData.userLastName);
