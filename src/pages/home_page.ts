@@ -47,7 +47,7 @@ export class HomePage{
      * @param {string} userName - The name of the user to locate.
      * @returns {Locator} A locator for the logged-in user text element.
      */
-    async getLoggedInUserLocator(userData: UserData): Promise<Locator> {
-        return this.page.getByText(` Logged in as ${userData.userFullName}`);
+    async getLoggedInUserLocator(userFullName: String): Promise<Locator> {
+        return this.page.getByText(` Logged in as ${userFullName}`);
     }
 }
