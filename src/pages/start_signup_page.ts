@@ -19,7 +19,7 @@ export class SignUpPage {
      */
     constructor(page: Page) {
         this.signUpPageTitle = this.signUpPageTitle = page.getByRole('heading', { name: 'New User Signup!' });
-        this.name = page.getByPlaceholder('Name');
+        this.name = page.getByRole('textbox', { name: 'Name' })
         this.email = page
             .locator('form')
             .filter({ hasText: 'Signup' })
@@ -34,9 +34,9 @@ export class SignUpPage {
      * @param {string} userEmail - The email to fill in the email input field.
      * @returns {Promise<void>} Resolves when the sign-up action is completed.
      */
-    async startSignup(userData: UserData): Promise<void>{
-        await this.name.fill(userData.userFullName);
-        await this.email.fill(userData.email);
+    async startSignup(userFullName: string, email: string): Promise<void>{
+        await this.name.fill(userFullName);
+        await this.email.fill(email);
         await this.singUpButton.click();
     }
 }
