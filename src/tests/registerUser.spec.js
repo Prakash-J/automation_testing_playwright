@@ -2,7 +2,7 @@
  * @fileoverview End-to-end tests for the user registration
  */
 
-import { test, expect } from '../fixtures/registerUserFixture';
+import { test, expect } from '../fixtures/registerUserFixture.ts';
 
 /**
  * Test suite for the user registration feature
