@@ -1,6 +1,6 @@
 import type { Page, Locator } from '@playwright/test';
 
-export class AccountCreationConfirmation {
+export class AccountCreationConfirmationPage {
     readonly accountCreationConfirmation: Locator;
     readonly continueButton: Locator;
 
