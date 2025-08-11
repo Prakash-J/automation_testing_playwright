@@ -18,7 +18,7 @@ const userData: UserData = {
     company: faker.person.fullName().toString(),
     addressOne: faker.location.streetAddress().toString(),
     addressTwo: faker.location.secondaryAddress().toString(),
-    country: faker.location.country().toString(),
+    country: 'India',
     state: faker.location.state().toString(),
     city: faker.location.city().toString(),
     zipcode: faker.location.zipCode().toString(),
