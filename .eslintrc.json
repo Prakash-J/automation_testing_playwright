@@ -18,7 +18,7 @@
     "prettier/prettier": "error",
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["**/*.spec.js", "**/playwright.config.js"] }
+      { "devDependencies": ["**/*.spec.js", "**/fixtures/**" ,"**/data/**", "**/*.config.js", "**/playwright.config.js", "pages/**/*.js"] }
     ]
   }
 }

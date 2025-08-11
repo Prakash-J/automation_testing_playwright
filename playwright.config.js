@@ -1,8 +1,11 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
-``;
 import dotenv from 'dotenv';
-dotenv.config();
+import path from 'path';
+
+const env = process.env.TEST_ENV || 'dev';
+dotenv.config({ path: path.resolve(process.cwd(), `.env.${env}`) });
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -15,7 +18,7 @@ dotenv.config();
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './src/tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -29,7 +32,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.BASE_URL || 'https://automationexercise.com',
+    baseURL: process.env.BASE_URL,
     headless: true, // Run tests in headless mode by default
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
