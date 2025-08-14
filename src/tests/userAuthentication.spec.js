@@ -53,3 +53,11 @@ test.describe('User Authentication', () => {
     await accountDeletionConfirmationPage.clickContinue();
   });
 });
+
+test.describe('Invalid Login', () => {
+  test('Incorrect Email and Password', async ({ homePage, signUpOrLoginPage }) => {
+    await testHelper.navigateToHomeClickSignUpOrLoginButton(homePage, signUpOrLoginPage, 'login');
+    await signUpOrLoginPage.startLogin(userData.email, userData.password);
+    await expect(signUpOrLoginPage.incorrectAuthErrorMessage).toBeVisible();
+  });
+});
