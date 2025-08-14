@@ -13,6 +13,7 @@ export class SignUpOrLoginPage {
     readonly loginEmail: Locator;
     readonly loginPassword: Locator;
     readonly loginButton: Locator;
+    readonly incorrectAuthErrorMessage: Locator;
 
     /**
      * Creates an instance of the SignUpPage class.
@@ -22,7 +23,7 @@ export class SignUpOrLoginPage {
      */
     constructor(page: Page) {
         this.signUpTitle = this.signUpTitle = page.getByRole('heading', { name: 'New User Signup!' });
-        this.loginTitle = this.loginTitle = page.getByRole('heading', { name: 'New User Signup!' });
+        this.loginTitle = this.loginTitle = page.getByRole('heading', { name: 'Login to your account' });
         this.signUpName = page.getByRole('textbox', { name: 'Name' })
         this.signUpEmail = page
             .locator('form')
@@ -35,6 +36,7 @@ export class SignUpOrLoginPage {
             .getByPlaceholder('Email Address');
         this.loginPassword = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: 'Login' });
+        this.incorrectAuthErrorMessage = page.getByText('Your email or password is');
     }
 
     /**
