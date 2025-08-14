@@ -8,6 +8,7 @@ export class HomePage{
     readonly logo: Locator;
     readonly navigationItems: Locator;
     readonly page: Page;
+    readonly productFeaturesItems: Locator;
 
     /**
      * Creates an instance of the HomePage class.
@@ -19,6 +20,7 @@ export class HomePage{
         this.page = page;
         this.logo = page.locator('img[alt="Website for automation practice"]');
         this.navigationItems = this.navigationItems = page.locator('.navbar-nav li');
+        this.productFeaturesItems = page.getByRole('heading', { name: 'Features Items' })
     }
 
      /**
