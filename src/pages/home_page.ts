@@ -1,5 +1,4 @@
 import type { Page, Locator } from '@playwright/test';
-import { UserData } from '../interface/userData';
 
 /**
  * Represents the Home page of the website and provides methods to interact with elements on the page.
