@@ -39,6 +39,12 @@ test.describe('User Authentication', () => {
     await expect(homePage.productFeaturesItems).toBeVisible();
   });
 
+  test('Register Existing User', async ({ homePage, signUpOrLoginPage }) => {
+    await testHelper.navigateToHomeClickSignUpOrLoginButton(homePage, signUpOrLoginPage, 'signup');
+    await signUpOrLoginPage.startSignup(userData.userFullName, userData.email);
+    await expect(signUpOrLoginPage.alreadyExistingUserErrorMessage).toBeVisible();
+  });
+
   test('Login Existing User and Delete', async ({
     homePage,
     signUpOrLoginPage,
