@@ -9,7 +9,7 @@
     // See also https://aka.ms/tsconfig/module
     "module": "NodeNext",
     "target": "esnext",
-    "types": ["node", "playwright"],
+    "types": ["NodeNext", "@playwright/test"],
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     // For nodejs:
