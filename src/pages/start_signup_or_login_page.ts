@@ -14,6 +14,7 @@ export class SignUpOrLoginPage {
     readonly loginPassword: Locator;
     readonly loginButton: Locator;
     readonly incorrectAuthErrorMessage: Locator;
+    readonly alreadyExistingUserErrorMessage: Locator;
 
     /**
      * Creates an instance of the SignUpPage class.
@@ -37,6 +38,7 @@ export class SignUpOrLoginPage {
         this.loginPassword = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: 'Login' });
         this.incorrectAuthErrorMessage = page.getByText('Your email or password is');
+        this.alreadyExistingUserErrorMessage = page.getByText('Email Address already exist!');
     }
 
     /**
