@@ -34,6 +34,9 @@ test.describe('User Authentication', () => {
     await accountCreationConfirmationPage.clickContinueButton();
 
     await testHelper.checkUserNameInHomePage(homePage, userData.userFullName);
+    await homePage.selectNavigationLink(' Logout');
+    await homePage.selectNavigationLink(' Home');
+    await expect(homePage.productFeaturesItems).toBeVisible();
   });
 
   test('Login Existing User and Delete', async ({
