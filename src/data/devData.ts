@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { UserData } from '../interface/userData';
+import { ContactUsFormData } from '../interface/contactUsFormData';
 
 const dob = faker.date.birthdate({ min: 18, max: 60, mode: 'age' });
 
@@ -25,4 +26,10 @@ const userData: UserData = {
     mobileNumber: faker.phone.number().toString(),
 };
 
-export default userData;
+const contactUsFormData: ContactUsFormData = {
+    name: faker.person.fullName().toString(),
+    email: faker.internet.email().toString(),
+    subject: faker.lorem.sentence({ min: 3, max: 6 }),
+    message: faker.lorem.sentence({ min: 90, max: 100 }),
+}
+export { userData, contactUsFormData };

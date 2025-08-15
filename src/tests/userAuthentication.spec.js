@@ -2,11 +2,9 @@
  * @file End-to-end tests for the user registration
  */
 
-import userDataRaw from '../data/devData.ts';
+import { userData } from '../data/devData.ts';
 import { test, expect } from '../fixtures/authenticationFixture.ts';
 import testHelper from '../helper/testHelper.ts';
-
-const userData = userDataRaw;
 
 test.describe.configure({
   mode: 'default',
